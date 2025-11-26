@@ -1,0 +1,12 @@
+pandas 
+numpy
+langchain
+langchain-community
+langchain-core
+ipykernel
+pypdf
+unstructured
+dotenv
+langchain-google-genai
+langchain-chroma
+wikipedia
