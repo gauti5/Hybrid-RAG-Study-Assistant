@@ -1,0 +1,209 @@
+
+As Per Latest
+CBSE
+Syllabus
+
+Computer Science
+Class XI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flow of control in Python
+
+
+
+Flow of Control:
+
+
+Flow of Control refers to the order in which statements are executed in a program.
+
+Types of Flow:
+1. Sequential Flow - one statement after another (default)
+2. Conditional Flow - decision-making using if statements
+3. Iterative Flow - repeating a set of instructions using loops
+
+
+
+
+Indentation in Python :
+
+
+
+Python uses indentation to define blocks of code.
+
+Rules:
+• Use consistent indentation (typically 4 spaces)
+• Required after if, for, while, etc.
+
+
+
+
+
+
+
+Sequential Flow :
+
+
+In Sequential Flow, statements are executed line-by-line in the order they appear.
+
+# Example x = 5
+y = 10
+sum = x + y print("Sum:", sum)
+
+
+
+ All statements are executed once in order.
+
+
+
+Sequential Flow Conditional flow :
+
+Conditional flow uses decision-making statements to control execution
+1. if
+2. if-else
+3. if-elif-else
+1. The if Statement in Python
+The if statement is used to execute a block of code only when a condition is true.
+
+
+
+
+Conditional flow in Python :
+
+# Example
+x = 7
+if x > 0:
+print("Positive number")
+Use if when there's a single condition to check.
+2. The if-else Statement in Python
+The if-else statement is used to execute one block if the condition is true, and another if it is false.
+
+
+
+Conditional flow in Python :
+
+# Example
+num = int(input("Enter a number: ")) if num % 2 == 0:
+print("Even number")
+else:
+print("Odd number")
+Use if-else when you need to choose between two outcomes.
+
+
+
+3. The if-elif-else Statement in Python
+The if-elif-else structure allows you to check multiple conditions
+one by one.
+
+
+
+Conditional flow in Python :
+
+# Example
+marks = int(input("Enter marks: ")) if marks >= 90:
+print("Grade: A")
+elif marks >= 75: print("Grade: B")
+elif marks >= 50:
+  print("Grade: C") else:
+print("Grade: D")
+
+ Use if-elif-else when you need to handle
+three or more conditions..
+
+
+
+Iterative Flow Control in Python :
+
+
+Loops: Iterative Flow Control
+Loops are used to repeat code until a condition is met.
+Two types in Python:
+1. for loop (definite iteration)
+2. while loop (condition-based)
+
+
+
+Iterative Flow Control in Python :
+
+The for Loop
+Used when the number of iterations is known in advance. The for loop is used to iterate over a sequence
+(like a list, string, or range of numbers). It runs the block of code for each item in the sequence.
+
+
+#Example
+
+for i in range(1, 6):
+print(i)
+
+# Here, i takes values from 1 to 5 one by one. For each value, the print(i) statement runs.
+
+
+
+The range() Function :
+
+The range() Function
+• range() is a built-in function that returns a sequence of numbers.
+• It is often used with for loops to define how many times to run the loop.
+
+• start: beginning value (optional, default is 0)
+• stop: loop ends before this value
+• step: difference between values (optional, default is 1)
+
+
+
+Iterative Flow Control in Python :
+
+The while Loop
+• A while loop is used when the number of repetitions is not known in advance.
+• The loop continues as long as the condition is true.
+
+
+break, continue, and pass Statements:
+
+Loop control statements are used to alter the normal flow of loops.
+break Statement: Terminates the loop immediately and transfers control to the next statement after the loop. # Example:
+for i in range(1, 6):
+if i == 4:
+   break print(i)
+#When i becomes 4, the loop is exited.
+continue Statement: Skips the current iteration and moves to the next iteration of the loop. #Example:
+for i in range(1, 6):
+if i == 3: continue
+print(i)
+#When i is 3, the print(i) statement is skipped.
+
+
+break, continue, and pass Statements:
+
+pass Statement Acts as a placeholder; it does nothing and allows the program to continue. Useful when a statement is syntactically required but no action is needed.
+#Example:
+for i in range(1, 6): if i == 3:
+   pass else:
+print(i)
+#When i is 3, pass is executed (which does nothing), and the loop continues.
+
+
+
+Nested Loops :
+
+Nested Loops
+• A nested loop means using one loop inside another.
+• Useful for printing patterns or working with 2D data structures.
+Pattern Printing: Use nested for loops to print patterns.
+
+# Example:
+rows = 5
+for i in range(1, rows + 1): for j in range(1, i + 1): print("*", end="")
+print()

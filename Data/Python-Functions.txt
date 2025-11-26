@@ -1,0 +1,397 @@
+
+
+
+
+
+
+
+
+
+
+
+
+Functions
+
+
+• Function:
+• Block of statements are grouped together and is given a name which can be used to invoke (call) it from other parts of the program.
+• Functions can be either Built-in functions or User-defined functions
+• Built-In Functions:
+Function nameSyntaxExplanationabs()abs(x), where x is an integer or
+floating point numberabs() function returns the
+absolute value of a numbermin()Min(arg_1,arg_2....arg_n) Where arg_1, arg_2...arg_n are argumentsReturns the smallest of 2 or more argumentsmax()Max(arg_1,arg_2....arg_n) Where
+arg_1, arg_2...arg_n are argumentsReturns the maximum of 2 or
+more argumentsDivmod()Divmod(a,b) where a and b are numbers representing numerator and denominatorReturns a pair of numbers which are quotient and remainder. (a//b, a%b)Pow()Pow(x,y) where x and y are
+numbersPow(x,y) is equivalent to x**yLen()Len(s) where s may be string, byte,
+list, tuple, range, dictionary or a setLen() function returns the length of the number of items in an object
+• Commonly Used Modules
+Modules are reusable libraries of code having .py extension. Python has many built in modules as
+part of the standard library.
+• Syntax: import module_name
+• Math module contains mathematical functions which can be used by the programmer.
+• Syntax: module_name.function_name()
+• Eg:
+• >>>import math
+• >>>print(math.ceil(5.4))
+• 6
+• >>>print(math.sqrt(4))
+• 2.0
+• >>>print(math.pi)
+• 3.141592653
+• >>>print(math.cos(1))
+• 0.54030
+• >>>math.factorial(6)
+• 720
+• >>>math.pow(2,3)
+• 8
+• Built-in function dir() returns a sorted list of strings containing the names of functions, classes
+and variables as defined in the module.
+• >>>dir(math)
+
+• Help: help() The argument to the help() is a string, which is looked up as the name of a module, function, class, method, keyword or documentation topic.
+• Eg:
+• >>> help(math.gcd)
+
+• Random module: This is used to generate random numbers.
+• >>>import random
+• >>>print(random.random())
+• 0.2551914
+• >>>print(random.randint(5,10))
+• 9
+• Random() function generates a random floating point number between 0 and 1.
+• Syntax: random.randint(start,stop) # generates a integer number between start and stop arguments
+
+• 3rd party modules or libraries can be installed and managed using python's package manager pip.
+Arrow is a popular library used to create, manipulate format and convert date, time and timestamp.
+
+• The Syntax for pip is
+• Pip install module_name
+• >>>import arrow
+• >>>a=arrow.utcnow()
+• >>>a.now()	# current date and time is displayed using now function.
+• <Arrow[date and time]>
+
+• Function definition and calling the function
+• Def function_name(parameter_1, parameter_2,	parameter_n):
+-	Statement(s)
+• Def - keyword
+• Function_name = user defined
+• Colon should be present at the end
+• Indentation should be provided to the statement following the function_name.
+• 1. The function Name: The rules are same as variables. We can use letters, numbers or an
+underscore but it cannot start with a number.
+• Keyword cannot be used as a function name.
+• 2. List of parameters to the function are enclosed in parentheses and separated by commas. Some functions do not have any parameters at all.
+• 3. Colon is required at the end of function header.
+• 4. Block of statements that define the body of function start at the next line of function header
+and they must have the same indentation level.
+• Syntax: function_name(argument_1, argument_2......argument_n)
+• There must be one to one correspondence between the formal parameters in the function
+definition and the actual arguments of the calling function.
+• When a function is called, the control flows from the calling function to the called function. Once the block of statements in the function definition is executed, the control flows back to the calling function and proceeds to the next statement.
+
+• Before executing the code in the source program, the python interpreter automatically defines a few special variables.
+• Python interpreter sets the special built-in _name_ variable to have a string value of "_main_".
+• After setting up these special variables, python interpreter reads the program to execute the
+code found in it. All the code is at indentation level 0 gets executed.
+• The special variable, _name_ with "_main"_ is the entry point of your program. All the functions should be invoked within main() function.
+• Eg:
+
+• def function_definition_with_no_argument():
+• print("This is a function definition with no arguments")
+• def function_definition_with_one_argument(message):
+• print("This is a function definition with {message}")
+
+• def main():
+• function_definition_with_no_argument()
+• function_definition_with_one_argument("one argument")
+
+• If_name_=="_main_":
+• main()
+• OUTPUT:
+• This is a function definition with no arguments
+• This is a function definition with one argument
+
+
+
+
+
+Output:
+
+
+
+• The return Statement and void Function
+• This is used to return value to the calling function so that it is stored in a variable.
+• Syntax: return[expression_list]
+• In Python, we can define functions without a return statement. Such functions are called void functions.
+• A function call return only a single value but that value can be a list or tuple.
+• Eg:
+
+• #Program to return multiple values from return statement separated by
+comma
+Example 1
+
+def world_war():
+alliance_world_war = input("which alliance won world war 2?") world_war_end_year = input("when did world war 2 end?") return alliance_world_war, world_war_end_year
+
+def main():
+alliance, war_end_year = world_war()
+print(f"The war was won by {alliance} and the war ended in {war_end_year}")
+
+if 	name	=="	main	":
+main()
+
+Example 2
+
+
+
+
+Output:
+Sum = 10
+Diff = 2
+
+• Scope and Lifetime of Variables
+
+• There are two scopes: global and local.
+• Global variables have global scope. A variable defined inside a function is called a local variable. Local variable is created and destroyed every time the function is executed. It cannot be accessed outside the function.
+• Global variables can be accessed inside a function if there will be no local variables with the same name.
+test_var = 10
+def outer_func(): test_var = 60
+
+def inner_func(): test_var = 100
+print("local var inner func is ", test_var)
+
+inner_func()
+print("local var outer func is", test_var)
+
+outer_func()
+print("global var value is", test_var)
+
+• Output:
+• local var inner func is 100
+• local var outer func is 60
+• global var value is 10
+
+
+
+
+Nested Function:
+A nested function (inner function) can inherit the arguments and variables of its outer function. The inner function can use the arguments and variables of the outer function while the outer function cannot use the arguments and variables of the inner function.
+The inner function definition is invoked by calling it from within the outer
+function definition.
+Example:
+def outer_fun():
+print("I m inside outer function")
+
+def inner_fun():
+    print(" I m inside inner function") inner_fun()	#possible 
+
+
+outer_fun()
+inner_fun()	#not possible to call inner function outside of the function 
+#gives NameError 
+
+Without return function
+
+Output:
+power= 8
+multiplication= 20
+
+With return function
+def multiplication(a,b):
+c=a*b
+def power(d,e): f=d**e return f
+result=power(2,3)
+return c,result
+def main():
+mul,pow =multiplication(4,5) print("mul=",mul) print("pow=",pow)
+if 	name	=="	main	":
+  main() Output: mul= 20
+pow= 8
+
+Default Parameters:
+Any calling function must provide arguments for all required parameters in the function definition but can omit the arguments for default parameters. If no argument is sent for that parameter, the default values is used.
+
+def work_area(prompt, domain="Data Analytics"):
+print(f"{prompt} {domain}")
+
+Def main():
+work_area(" Sam works here in ")
+work_area("Alice has interest in", "Internet of Things")
+
+If	name	=="	main	":
+main()
+
+Output:
+Sam works here in Data Analytics
+Alice has interest in Internet of Things
+
+Example : 2
+def message(msg1,msg2="Good Morning"):
+print(msg1,msg2)
+
+def main(): message("hello") message("hello","world")
+
+if 		name	=="	main	": main()
+
+Output:
+hello Good Morning hello world
+
+Keyword Arguments:
+Whenever you call a function with some values as its arguments, these values get
+assigned to the parameters in the function definition according to their position.
+
+In calling function, you can specify the argument name and their value in the form of
+Kwarg = value. In calling function, keyword arguments must follow positional arguments.
+
+No parameter in the function definition may receive a value more than once.
+OR
+Keyword arguments mean whenever we pass the arguments(or value) by their parameter names at the time of calling the function in Python in which if you change the position of arguments then there will be no change in the output.
+     On using keyword arguments you will get the correct output because the order of argument doesn't matter provided the logic of your code is correct. But in the case of positional arguments, you will get more than one output on changing the order of the arguments.
+
+Example 1: Keyword Argument
+def nameAge(name, age): print("Hi, I am", name) print("My Age is", age)
+
+nameAge(name = "SriRam", age = 20) nameAge(age = "20", name = "SriRam")
+Output:
+Hi, I am SriRam My Age is 20 Hi, I am SriRam My Age is 20
+
+Positional arguments
+Positional arguments are arguments that need to be included in the proper position or order. The first positional argument always needs to be listed first when the function is called.The second positional argument needs to be listed second and the third positional argument listed third, etc.
+Example 1:
+def nameAge(name, age): print("Hi I' am", name) print("My age is", age)
+#you will get correct output because argument is given in order
+nameAge("SriRam", 20)
+#you will get Incorrect output because argument is not in order nameAge(20, "SriRam")
+Output:
+Hi I' am SriRam My age is 20
+Hi I 'am 20
+My age is SriRam
+
+*args and **kwargs
+They are used as parameters in function definitions.
+*args and **kwargs allows you to pass a variable number of arguments to the calling function.
+User might not know the number of arguments in advance that will be passed to the calling function.
+
+*args : Allows you to pass a non-key worded variable length argument list to the calling function.
+**kwargs as parameter in function allows you to pass key worded variable length dictionary argument list to the calling function.
+*args should come after all the positional paramters and **kwargs must
+come right at the end.
+
+*args and **kwargs
+• In Python, we can pass a variable number of arguments to a function using
+special symbols.There are two special symbols:
+• *args (Non Keyword Arguments)
+• **kwargs (Keyword Arguments)
+   We use *args and **kwargs as an argument when we are unsure about the number of arguments to pass in the functions.
+
+Python *args
+Python has *args which allow us to pass the variable number of non keyword arguments to function.
+In the function, we should use an asterisk * before the parameter name to pass variable length arguments.The arguments are passed as a tuple and these passed arguments make tuple inside the function with same name as the parameter excluding asterisk *
+
+Example 1 : *args
+def adder(*num): sum = 0
+for n in num: sum = sum + n
+print("Sum:" ,sum)
+
+adder(3,5) adder(4,5,6,7)
+adder(1,2,3,4,5,6)
+Output: Sum: 8
+Sum: 22
+Sum: 21
+
+Python **kwargs
+Python passes variable length non keyword argument to function using *args but we cannot use this to pass keyword argument. For this problem Python has got a solution called **kwargs
+it allows us to pass the variable length of keyword arguments to the function.
+In the function, we use the double asterisk ** before the parameter name to denote this type of argument. The arguments are passed as a dictionary and these arguments make a dictionary inside function with name same as the parameter excluding double asterisk **
+
+Dictionaries - Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+
+Example 1 : **kwargs
+def intro(**data):
+print("\n Data type of argument:", type(data))
+print("keyword Arguments:",data)
+
+for key, value in data.items():
+print("{} is {}".format(key,value))
+intro(Firstname="Sri", Lastname="Ram", Age=22, Phone=1234567891) intro(Firstname="Sita", Lastname="Ram", Age=25, Phone=987654218,
+Email="sitaram@gmail.com", State="Karnataka", Country="India")
+
+Output:
+Data type of argument: <class 'dict'>
+keyword Arguments: {'Firstname': 'Sri', 'Lastname': 'Ram', 'Age': 22, 'Phone':
+1234567891}
+Firstname is Sri Lastname is Ram Age is 22
+Phone is 1234567891
+Data type of argument: <class 'dict'>
+keyword Arguments: {'Firstname': 'Sita', 'Lastname': 'Ram', 'Age': 25, 'Phone':
+987654218, 'Email': 'sitaram@gmail.com', 'State': 'Karnataka', 'Country': 'India'}
+Firstname is Sita Lastname is Ram Age is 25
+Phone is 987654218
+Email is sitaram@gmail.com State is Karnataka
+Country is India
+
+Command Line Arguments:
+A python program can accept any number of arguments from the command line. Command line arguments is a methodology in which user will give inputs to the program through the console using commands.
+
+You need to import sys module to access command line arguments. All the command line arguments can be printed as a list of string by executing sys.argv.
+
+Example:
+import sys
+def main():
+print(f"sys.argv prints all the arguments at the command line including file name {sys.argv}")
+print(f"len(sys.argv) prints the total number of command line arguments including file name
+{len(sys.argv)}")
+print("you can use for loop to traverse through sys.argv") for arg in sys.argv:
+print(arg)
+if 	name	=="	main	":
+main()
+
+Output
+• C:\Users\Admin>python C:/Users/Admin/AppData/Local/Programs/Python/Python311/cmdline1.py lion tiger mouse
+• len(sys.argv) prints the total number of command line arguments including file name 4
+• C:/Users/Admin/AppData/Local/Programs/Python/Python311/cmdline1.py
+• lion
+• tiger
+• mouse
+
+How to Execute command line argument program
+1. Write the program in notepad
+2. Save the program with .py extension
+3. Open command prompt
+4. Change the path to where program is being saved
+5. Py followed by filename.py (cmd1.py) and followed by number of Arguments (arg1 arg2 arg3.....)
+
+
+
+Example 1 import sys print(sys.argv)
+print(len(sys.argv))
+for i in range (0,len(sys.argv)): print("Argument -:",i,":",sys.argv[i])
+
+
+
+#Sum of all the elements from the command line import sys
+sum=0
+for i in range (1,len(sys.argv)): sum+=int(sys.argv[i])
+print("result=",sum)
+
+
+
+Why Not input()?
+The input() function in Python is designed for interactive user input. It pauses program execution to allow users to type their input during the runtime of the script. This is useful when you need input from the user after the program has started running, or when you want to ask for input based on prior outputs or conditions met during execution.
+
+Command-line Arguments with `sys.argv`
+• On the other hand, `sys.argv` is used to retrieve arguments passed to the script from the command line before the program begins running. Here's why this is useful:
+• - **Non-interactive execution**: Scripts can be run with predefined parameters without any interactive prompts, which is essential for automation tasks and batch processing where human interaction is not feasible.
+• - **Parameter initialization**: Immediately initialize the program with configuration or operational parameters, such as file paths, execution modes, or debug flags.
+• - **Flexibility and Integration**: Allows the script to be integrated with other scripts, tools, or systems that can call your Python script with varying parameters without modification to the script itself.
+
+How `sys.argv`Works
+• `sys.argv` is a list in Python, which is populated with the command line arguments passed when a Python script is executed. Here's how it works:
+• 1. `sys.argv[0]` is always the name of the script being executed.
+• 2. `sys.argv[1]` to `sys.argv[n]` are the arguments passed to the script. Example:
+If you run a Python script like this:
+python script.py param1 param2
+Inside `script.py`, `sys.argv` will be:
+['script.py', 'param1', 'param2']
+You can access each argument using its index in the list.
