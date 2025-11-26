@@ -6,9 +6,6 @@ Query: what is the main difference between a list and a tuple?
 
 Processing...
 
-================================================================================
-ANSWER:
-================================================================================
 Based on the context provided, the main difference between a list and a tuple is that tuples are immutable, meaning their elements cannot be modified after creation, whereas lists can be modified.
 
 Output : 2
